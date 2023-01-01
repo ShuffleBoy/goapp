@@ -1,4 +1,4 @@
-module app
+module github.com/ShuffleBoy/goapp
 
 go 1.19
 
