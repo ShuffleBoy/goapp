@@ -1,4 +1,4 @@
-package app
+package goapp
 
 func (a *App) AddProvider(constructor any) {
 	a.providers = append(a.providers, constructor)

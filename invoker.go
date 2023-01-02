@@ -1,4 +1,4 @@
-package app
+package goapp
 
 func (a *App) AddInvoker(f any) {
 	a.invokers = append(a.invokers, f)

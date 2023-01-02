@@ -1,4 +1,4 @@
-package app
+package goapp
 
 import (
 	"go.uber.org/dig"
