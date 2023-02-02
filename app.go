@@ -8,16 +8,21 @@ type App struct {
 	container *dig.Container
 	providers []any
 	invokers  []any
+
+	// Options
+	options            []Option
+	concurrentInvokers bool
 }
 
-func NewApp() *App {
+func NewApp(options ...Option) *App {
 	app := new(App)
 	app.container = dig.New()
-
+	app.options = options
 	return app
 }
 
 func (a *App) Start() {
 	a.initializeProviders()
-	a.initializeInvokers()
+	a.runInvokers()
+	a.applyOptions()
 }

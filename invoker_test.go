@@ -32,6 +32,6 @@ func TestApp_initializeInvokers(t *testing.T) {
 		res <- 2
 	}
 	a.AddInvokers(dummyFunc, dummyFunc2)
-	a.initializeInvokers()
+	a.runInvokers()
 	assert.Len(t, res, 2)
 }
