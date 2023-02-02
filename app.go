@@ -10,19 +10,17 @@ type App struct {
 	invokers  []any
 
 	// Options
-	options            []Option
 	concurrentInvokers bool
 }
 
 func NewApp(options ...Option) *App {
 	app := new(App)
 	app.container = dig.New()
-	app.options = options
+	app.applyOptions(options...)
 	return app
 }
 
 func (a *App) Start() {
 	a.initializeProviders()
 	a.runInvokers()
-	a.applyOptions()
 }

@@ -8,8 +8,8 @@ func WithConcurrentInvokers() Option {
 	}
 }
 
-func (a *App) applyOptions() {
-	for _, option := range a.options {
+func (a *App) applyOptions(options ...Option) {
+	for _, option := range options {
 		option(a)
 	}
 }
